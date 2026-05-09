@@ -757,6 +757,25 @@
       .price-cta { flex-direction: column; align-items: flex-start; }
       .contacts-links { flex-direction: column; align-items: stretch; }
       .c-link { justify-content: center; }
+      /* mockup на мобиле: убираем трансформ, даём sp реальные размеры */
+      .ls-inner { width: 100% !important; height: 380px !important; transform: none !important; }
+      .ps-inner { width: 100% !important; height: 340px !important; transform: none !important; animation-delay: 0s !important; }
+      .sp { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+      .sp-nav { height: 22px !important; padding: 0 8px !important; }
+      .sp-logo { font-size: 8px !important; }
+      .sp-link { width: 16px !important; height: 4px !important; }
+      .sp-links { gap: 6px !important; }
+      .sp-hero { height: 110px !important; padding: 8px !important; gap: 3px !important; }
+      .sp-tag { font-size: 5px !important; }
+      .sp-h1 { font-size: 10px !important; line-height: 1.2 !important; }
+      .sp-sub { font-size: 5px !important; }
+      .sp-cta { height: 14px !important; padding: 0 7px !important; font-size: 5px !important; margin-top: 3px !important; border-radius: 3px !important; }
+      .sp-section { padding: 8px !important; }
+      .sp-stitle { font-size: 7px !important; margin-bottom: 5px !important; }
+      .sp-grid { gap: 5px !important; }
+      .sp-grid3 { gap: 4px !important; }
+      .sp-card { height: 52px !important; border-radius: 5px !important; }
+      .sp-card3 { height: 42px !important; border-radius: 4px !important; }
     }
     @media (max-width: 600px) {
       .services-grid, .why-grid { grid-template-columns: 1fr; }
