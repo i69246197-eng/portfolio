@@ -1244,6 +1244,11 @@ document.addEventListener('click', e => {
   const url = btn ? btn.dataset.url : (card ? card.dataset.url : null);
   if (!url) return;
   e.preventDefault();
+  // на мобильном — открываем в новой вкладке, без модалки
+  if (window.matchMedia('(max-width: 900px)').matches) {
+    window.open(url, '_blank');
+    return;
+  }
   modalBody.innerHTML = `<iframe src="${url}" title="Превью"></iframe>`;
   modalLink.href = url;
   modal.classList.add('open');
