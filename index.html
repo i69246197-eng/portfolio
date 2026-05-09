@@ -338,7 +338,11 @@
       flex: 1; height: 11px; background: #191926;
       border-radius: 20px; margin: 0 6px;
     }
-    .laptop-screen { height: 163px; overflow: hidden; position: relative; background: #111; }
+    .laptop-screen { height: 163px; overflow: hidden; position: relative; background: #faf7f5; }
+    .work-card:nth-child(2) .laptop-screen,
+    .work-card:nth-child(2) .phone-screen { background: #faf8f4; }
+    .work-card:nth-child(3) .laptop-screen,
+    .work-card:nth-child(3) .phone-screen { background: #141412; }
     .laptop-screen::after {
       content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 55%;
       background: linear-gradient(to bottom, transparent 0%, rgba(7,7,14,0.96) 100%);
@@ -350,7 +354,63 @@
       transform: scale(.5); transform-origin: top left;
       animation: scroll-laptop 14s ease-in-out infinite;
     }
-    .ls-inner iframe { width: 100%; height: 100%; border: none; pointer-events: none; }
+    .ls-inner iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none; z-index: 2; }
+
+    /* SITE PREVIEWS (CSS skeleton — mobile & desktop placeholder) */
+    .sp { width: 100%; height: 100%; overflow: hidden; display: block; }
+    .sp-nav { height: 60px; display: flex; align-items: center; padding: 0 28px; justify-content: space-between; border-bottom: 1px solid; }
+    .sp-logo { width: 80px; height: 16px; border-radius: 4px; }
+    .sp-links { display: flex; gap: 20px; }
+    .sp-link { width: 50px; height: 12px; border-radius: 3px; opacity: .25; }
+    .sp-hero { height: 340px; padding: 40px 28px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+    .sp-tag { width: 100px; height: 14px; border-radius: 12px; opacity: .55; }
+    .sp-h1b { height: 34px; border-radius: 4px; opacity: .9; }
+    .sp-h1b:nth-child(3) { width: 72%; }
+    .sp-p { height: 13px; border-radius: 3px; opacity: .4; }
+    .sp-p:nth-child(5) { width: 58%; }
+    .sp-btn { height: 44px; width: 150px; border-radius: 8px; margin-top: 8px; }
+    .sp-section { padding: 36px 28px; }
+    .sp-stitle { height: 22px; border-radius: 4px; width: 48%; opacity: .75; margin-bottom: 20px; }
+    .sp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .sp-card { height: 150px; border-radius: 10px; }
+    .sp-grid3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 14px; }
+    .sp-card3 { height: 110px; border-radius: 8px; }
+
+    /* Кондитер Аня — cream/rose */
+    .sp-1 { background: #faf7f5; }
+    .sp-1 .sp-nav { background: #fff; border-color: rgba(42,24,32,.07); }
+    .sp-1 .sp-logo, .sp-1 .sp-link { background: #2a1820; }
+    .sp-1 .sp-hero { background: linear-gradient(150deg,#f0dce6 0%,#faf7f5 100%); }
+    .sp-1 .sp-tag { background: #d4728a; }
+    .sp-1 .sp-h1b, .sp-1 .sp-p { background: #2a1820; }
+    .sp-1 .sp-btn { background: #d4728a; }
+    .sp-1 .sp-stitle { background: #2a1820; }
+    .sp-1 .sp-card, .sp-1 .sp-card3 { background: rgba(212,114,138,.15); }
+    .sp-1 .sp-section:nth-child(3) { background: #f2e9e3; }
+
+    /* Богомолов — cream/sage */
+    .sp-2 { background: #faf8f4; }
+    .sp-2 .sp-nav { background: #faf8f4; border-color: rgba(28,24,20,.08); }
+    .sp-2 .sp-logo, .sp-2 .sp-link { background: #1c1814; }
+    .sp-2 .sp-hero { background: #3d5c4a; }
+    .sp-2 .sp-tag { background: rgba(250,248,244,.55); }
+    .sp-2 .sp-h1b, .sp-2 .sp-p { background: #faf8f4; }
+    .sp-2 .sp-btn { background: #faf8f4; }
+    .sp-2 .sp-stitle { background: #1c1814; }
+    .sp-2 .sp-card, .sp-2 .sp-card3 { background: rgba(61,92,74,.15); }
+    .sp-2 .sp-section:nth-child(3) { background: #f0ebe2; }
+
+    /* Барбер Илья — dark */
+    .sp-3 { background: #141412; }
+    .sp-3 .sp-nav { background: #1a1916; border-color: rgba(240,236,228,.07); }
+    .sp-3 .sp-logo, .sp-3 .sp-link { background: #f0ece4; }
+    .sp-3 .sp-hero { background: linear-gradient(150deg,#1e1c18 0%,#141412 100%); }
+    .sp-3 .sp-tag { background: rgba(240,236,228,.2); }
+    .sp-3 .sp-h1b, .sp-3 .sp-p { background: #f0ece4; }
+    .sp-3 .sp-btn { background: #f0ece4; }
+    .sp-3 .sp-stitle { background: #f0ece4; }
+    .sp-3 .sp-card, .sp-3 .sp-card3 { background: rgba(240,236,228,.1); }
+    .sp-3 .sp-section:nth-child(3) { background: #1a1916; }
 
     .laptop-base {
       height: 22px; margin: 0 -10px;
@@ -705,15 +765,6 @@
       .price-cta { flex-direction: column; align-items: flex-start; }
       .contacts-links { flex-direction: column; align-items: stretch; }
       .c-link { justify-content: center; }
-      /* mockup — скрываем на мобиле (iframes тяжёлые, чёрный экран) */
-      .mockup-scene { display: none; }
-      .work-card::before {
-        content: '';
-        display: block;
-        height: 3px;
-        background: linear-gradient(90deg, rgba(212,255,71,0.6) 0%, rgba(212,255,71,0.08) 100%);
-      }
-      .work-info { padding: 24px 20px 20px; }
     }
     @media (max-width: 600px) {
       .services-grid, .why-grid { grid-template-columns: 1fr; }
@@ -890,14 +941,14 @@
         <div class="laptop">
           <div class="laptop-lid">
             <div class="laptop-bar"><span class="ldot r"></span><span class="ldot y"></span><span class="ldot g"></span><div class="laptop-urlbar"></div></div>
-            <div class="laptop-screen"><div class="ls-inner" data-src="https://quiet-youtiao-48b31c.netlify.app"></div></div>
+            <div class="laptop-screen"><div class="ls-inner" data-src="https://quiet-youtiao-48b31c.netlify.app"><div class="sp sp-1"><div class="sp-nav"><div class="sp-logo"></div><div class="sp-links"><div class="sp-link"></div><div class="sp-link"></div><div class="sp-link"></div></div></div><div class="sp-hero"><div class="sp-tag"></div><div class="sp-h1b"></div><div class="sp-h1b"></div><div class="sp-p"></div><div class="sp-p"></div><div class="sp-btn"></div></div><div class="sp-section"><div class="sp-stitle"></div><div class="sp-grid3"><div class="sp-card3"></div><div class="sp-card3"></div><div class="sp-card3"></div></div></div><div class="sp-section"><div class="sp-stitle"></div><div class="sp-grid"><div class="sp-card"></div><div class="sp-card"></div></div></div></div></div></div>
           </div>
           <div class="laptop-base"><div class="laptop-tp"></div></div>
         </div>
         <div class="phone">
           <div class="phone-frame">
             <div class="phone-notch"><div class="pn-pill"></div></div>
-            <div class="phone-screen"><div class="ps-inner" data-src="https://quiet-youtiao-48b31c.netlify.app"></div></div>
+            <div class="phone-screen"><div class="ps-inner" data-src="https://quiet-youtiao-48b31c.netlify.app"><div class="sp sp-1"><div class="sp-nav"><div class="sp-logo"></div></div><div class="sp-hero"><div class="sp-tag"></div><div class="sp-h1b"></div><div class="sp-h1b"></div><div class="sp-p"></div><div class="sp-btn"></div></div><div class="sp-section"><div class="sp-stitle"></div><div class="sp-grid"><div class="sp-card"></div><div class="sp-card"></div></div></div><div class="sp-section"><div class="sp-stitle"></div><div class="sp-grid"><div class="sp-card"></div><div class="sp-card"></div></div></div></div></div></div>
             <div class="phone-home"><div class="phone-bar"></div></div>
           </div>
         </div>
@@ -914,14 +965,14 @@
         <div class="laptop">
           <div class="laptop-lid">
             <div class="laptop-bar"><span class="ldot r"></span><span class="ldot y"></span><span class="ldot g"></span><div class="laptop-urlbar"></div></div>
-            <div class="laptop-screen"><div class="ls-inner" data-src="https://relaxed-gnome-af3845.netlify.app"></div></div>
+            <div class="laptop-screen"><div class="ls-inner" data-src="https://relaxed-gnome-af3845.netlify.app"><div class="sp sp-2"><div class="sp-nav"><div class="sp-logo"></div><div class="sp-links"><div class="sp-link"></div><div class="sp-link"></div><div class="sp-link"></div></div></div><div class="sp-hero"><div class="sp-tag"></div><div class="sp-h1b"></div><div class="sp-h1b"></div><div class="sp-p"></div><div class="sp-p"></div><div class="sp-btn"></div></div><div class="sp-section"><div class="sp-stitle"></div><div class="sp-grid3"><div class="sp-card3"></div><div class="sp-card3"></div><div class="sp-card3"></div></div></div><div class="sp-section"><div class="sp-stitle"></div><div class="sp-grid"><div class="sp-card"></div><div class="sp-card"></div></div></div></div></div></div>
           </div>
           <div class="laptop-base"><div class="laptop-tp"></div></div>
         </div>
         <div class="phone">
           <div class="phone-frame">
             <div class="phone-notch"><div class="pn-pill"></div></div>
-            <div class="phone-screen"><div class="ps-inner" data-src="https://relaxed-gnome-af3845.netlify.app"></div></div>
+            <div class="phone-screen"><div class="ps-inner" data-src="https://relaxed-gnome-af3845.netlify.app"><div class="sp sp-2"><div class="sp-nav"><div class="sp-logo"></div></div><div class="sp-hero"><div class="sp-tag"></div><div class="sp-h1b"></div><div class="sp-h1b"></div><div class="sp-p"></div><div class="sp-btn"></div></div><div class="sp-section"><div class="sp-stitle"></div><div class="sp-grid"><div class="sp-card"></div><div class="sp-card"></div></div></div><div class="sp-section"><div class="sp-stitle"></div><div class="sp-grid"><div class="sp-card"></div><div class="sp-card"></div></div></div></div></div></div>
             <div class="phone-home"><div class="phone-bar"></div></div>
           </div>
         </div>
@@ -938,14 +989,14 @@
         <div class="laptop">
           <div class="laptop-lid">
             <div class="laptop-bar"><span class="ldot r"></span><span class="ldot y"></span><span class="ldot g"></span><div class="laptop-urlbar"></div></div>
-            <div class="laptop-screen"><div class="ls-inner" data-src="https://inquisitive-bienenstitch-a2ac42.netlify.app"></div></div>
+            <div class="laptop-screen"><div class="ls-inner" data-src="https://inquisitive-bienenstitch-a2ac42.netlify.app"><div class="sp sp-3"><div class="sp-nav"><div class="sp-logo"></div><div class="sp-links"><div class="sp-link"></div><div class="sp-link"></div><div class="sp-link"></div></div></div><div class="sp-hero"><div class="sp-tag"></div><div class="sp-h1b"></div><div class="sp-h1b"></div><div class="sp-p"></div><div class="sp-p"></div><div class="sp-btn"></div></div><div class="sp-section"><div class="sp-stitle"></div><div class="sp-grid3"><div class="sp-card3"></div><div class="sp-card3"></div><div class="sp-card3"></div></div></div><div class="sp-section"><div class="sp-stitle"></div><div class="sp-grid"><div class="sp-card"></div><div class="sp-card"></div></div></div></div></div></div>
           </div>
           <div class="laptop-base"><div class="laptop-tp"></div></div>
         </div>
         <div class="phone">
           <div class="phone-frame">
             <div class="phone-notch"><div class="pn-pill"></div></div>
-            <div class="phone-screen"><div class="ps-inner" data-src="https://inquisitive-bienenstitch-a2ac42.netlify.app"></div></div>
+            <div class="phone-screen"><div class="ps-inner" data-src="https://inquisitive-bienenstitch-a2ac42.netlify.app"><div class="sp sp-3"><div class="sp-nav"><div class="sp-logo"></div></div><div class="sp-hero"><div class="sp-tag"></div><div class="sp-h1b"></div><div class="sp-h1b"></div><div class="sp-p"></div><div class="sp-btn"></div></div><div class="sp-section"><div class="sp-stitle"></div><div class="sp-grid"><div class="sp-card"></div><div class="sp-card"></div></div></div><div class="sp-section"><div class="sp-stitle"></div><div class="sp-grid"><div class="sp-card"></div><div class="sp-card"></div></div></div></div></div></div>
             <div class="phone-home"><div class="phone-bar"></div></div>
           </div>
         </div>
