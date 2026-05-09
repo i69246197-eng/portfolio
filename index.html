@@ -705,6 +705,15 @@
       .price-cta { flex-direction: column; align-items: flex-start; }
       .contacts-links { flex-direction: column; align-items: stretch; }
       .c-link { justify-content: center; }
+      /* mockup — скрываем на мобиле (iframes тяжёлые, чёрный экран) */
+      .mockup-scene { display: none; }
+      .work-card::before {
+        content: '';
+        display: block;
+        height: 3px;
+        background: linear-gradient(90deg, rgba(212,255,71,0.6) 0%, rgba(212,255,71,0.08) 100%);
+      }
+      .work-info { padding: 24px 20px 20px; }
     }
     @media (max-width: 600px) {
       .services-grid, .why-grid { grid-template-columns: 1fr; }
@@ -725,16 +734,6 @@
       .price-table th:nth-child(3),
       .price-table td:nth-child(3) { display: none; }
 
-      /* mockup — скрываем на мобиле (iframes тяжёлые) */
-      .mockup-scene { display: none; }
-      .work-card { position: relative; }
-      .work-card::before {
-        content: '';
-        display: block;
-        height: 3px;
-        background: linear-gradient(90deg, rgba(212,255,71,0.6) 0%, rgba(212,255,71,0.08) 100%);
-      }
-      .work-info { padding: 24px 20px 20px; }
     }
     @media (max-width: 400px) {
       .price-factors { grid-template-columns: 1fr; }
