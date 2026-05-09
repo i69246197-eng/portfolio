@@ -725,10 +725,16 @@
       .price-table th:nth-child(3),
       .price-table td:nth-child(3) { display: none; }
 
-      /* mockup — меньше высота на мобиле */
-      .mockup-scene { height: 220px; padding: 18px 12px 0; }
-      .laptop { width: 200px; }
-      .laptop-screen { height: 122px; }
+      /* mockup — скрываем на мобиле (iframes тяжёлые) */
+      .mockup-scene { display: none; }
+      .work-card { position: relative; }
+      .work-card::before {
+        content: '';
+        display: block;
+        height: 3px;
+        background: linear-gradient(90deg, rgba(212,255,71,0.6) 0%, rgba(212,255,71,0.08) 100%);
+      }
+      .work-info { padding: 24px 20px 20px; }
     }
     @media (max-width: 400px) {
       .price-factors { grid-template-columns: 1fr; }
@@ -1208,7 +1214,8 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.fi').forEach(el => obs.observe(el));
 
-// PORTFOLIO — lazy iframe into mockup screens
+// PORTFOLIO — lazy iframe into mockup screens (только на десктопе)
+if (!window.matchMedia('(max-width: 900px)').matches) {
 const pObs = new IntersectionObserver((entries, o) => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
@@ -1226,6 +1233,7 @@ const pObs = new IntersectionObserver((entries, o) => {
   });
 }, { rootMargin: '200px' });
 document.querySelectorAll('.work-card').forEach(c => pObs.observe(c));
+} // end desktop-only iframe block
 
 // MODAL
 const modal = document.getElementById('modal');
