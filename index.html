@@ -356,53 +356,12 @@
     }
     .ls-inner iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none; z-index: 2; }
 
-    /* SITE PREVIEWS */
-    .sp { width: 100%; height: 100%; overflow: hidden; display: block; font-family: sans-serif; }
-    .sp-nav { height: 60px; display: flex; align-items: center; padding: 0 28px; justify-content: space-between; border-bottom: 1px solid; }
-    .sp-logo { font-size: 20px; font-weight: 800; letter-spacing: -.5px; }
-    .sp-links { display: flex; gap: 20px; }
-    .sp-link { width: 50px; height: 10px; border-radius: 3px; opacity: .2; }
-    .sp-hero { height: 330px; padding: 36px 28px; display: flex; flex-direction: column; justify-content: center; gap: 12px; }
-    .sp-tag { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; opacity: .6; }
-    .sp-h1 { font-size: 34px; font-weight: 800; line-height: 1.15; }
-    .sp-sub { font-size: 14px; opacity: .65; line-height: 1.5; }
-    .sp-cta { display: inline-flex; align-items: center; height: 44px; padding: 0 24px; border-radius: 8px; font-size: 13px; font-weight: 700; margin-top: 8px; width: fit-content; }
-    .sp-section { padding: 32px 28px; }
-    .sp-stitle { font-size: 22px; font-weight: 800; margin-bottom: 18px; }
-    .sp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .sp-card { height: 150px; border-radius: 10px; }
-    .sp-grid3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
-    .sp-card3 { height: 120px; border-radius: 8px; }
-
-    /* Кондитер Аня — cream/rose */
-    .sp-1 { background: #faf7f5; color: #2a1820; }
-    .sp-1 .sp-nav { background: #fff; border-color: rgba(42,24,32,.07); }
-    .sp-1 .sp-link { background: #2a1820; }
-    .sp-1 .sp-hero { background: linear-gradient(150deg,#f2d8e2 0%,#faf7f5 100%); }
-    .sp-1 .sp-cta { background: #d4728a; color: #fff; }
-    .sp-1 .sp-card { background: linear-gradient(135deg,#f0c0d0 0%,#c85878 100%); }
-    .sp-1 .sp-card3 { background: linear-gradient(135deg,#f0c0d0 0%,#d4728a 100%); }
-    .sp-1 .sp-section:nth-child(3) { background: #f4ede8; }
-
-    /* Богомолов — cream/sage */
-    .sp-2 { background: #faf8f4; color: #1c1814; }
-    .sp-2 .sp-nav { background: #faf8f4; border-color: rgba(28,24,20,.08); }
-    .sp-2 .sp-link { background: #1c1814; }
-    .sp-2 .sp-hero { background: #3d5c4a; color: #faf8f4; }
-    .sp-2 .sp-cta { background: #faf8f4; color: #1c1814; }
-    .sp-2 .sp-card { background: linear-gradient(135deg,#7aaa8a 0%,#3d5c4a 100%); }
-    .sp-2 .sp-card3 { background: linear-gradient(135deg,#8abb9a 0%,#3d5c4a 100%); }
-    .sp-2 .sp-section:nth-child(3) { background: #f0ebe2; }
-
-    /* Барбер Илья — dark */
-    .sp-3 { background: #141412; color: #f0ece4; }
-    .sp-3 .sp-nav { background: #1a1916; border-color: rgba(240,236,228,.08); }
-    .sp-3 .sp-link { background: rgba(240,236,228,.2); }
-    .sp-3 .sp-hero { background: linear-gradient(150deg,#232118 0%,#141412 100%); }
-    .sp-3 .sp-cta { background: #f0ece4; color: #141412; }
-    .sp-3 .sp-card { background: linear-gradient(135deg,#2e2c28 0%,#1a1916 100%); border: 1px solid rgba(240,236,228,.1); }
-    .sp-3 .sp-card3 { background: linear-gradient(135deg,#282622 0%,#1a1916 100%); border: 1px solid rgba(240,236,228,.1); }
-    .sp-3 .sp-section:nth-child(3) { background: #1a1916; }
+    /* MOCKUP SCREENSHOTS */
+    .ls-inner img, .ps-inner img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top center;
+      display: block; pointer-events: none;
+    }
 
     .laptop-base {
       height: 22px; margin: 0 -10px;
@@ -757,25 +716,9 @@
       .price-cta { flex-direction: column; align-items: flex-start; }
       .contacts-links { flex-direction: column; align-items: stretch; }
       .c-link { justify-content: center; }
-      /* mockup на мобиле: убираем трансформ, даём sp реальные размеры */
+      /* mockup на мобиле: убираем трансформ, img заполняет экран */
       .ls-inner { width: 100% !important; height: 380px !important; transform: none !important; }
       .ps-inner { width: 100% !important; height: 340px !important; transform: none !important; animation-delay: 0s !important; }
-      .sp { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
-      .sp-nav { height: 22px !important; padding: 0 8px !important; }
-      .sp-logo { font-size: 8px !important; }
-      .sp-link { width: 16px !important; height: 4px !important; }
-      .sp-links { gap: 6px !important; }
-      .sp-hero { height: 110px !important; padding: 8px !important; gap: 3px !important; }
-      .sp-tag { font-size: 5px !important; }
-      .sp-h1 { font-size: 10px !important; line-height: 1.2 !important; }
-      .sp-sub { font-size: 5px !important; }
-      .sp-cta { height: 14px !important; padding: 0 7px !important; font-size: 5px !important; margin-top: 3px !important; border-radius: 3px !important; }
-      .sp-section { padding: 8px !important; }
-      .sp-stitle { font-size: 7px !important; margin-bottom: 5px !important; }
-      .sp-grid { gap: 5px !important; }
-      .sp-grid3 { gap: 4px !important; }
-      .sp-card { height: 52px !important; border-radius: 5px !important; }
-      .sp-card3 { height: 42px !important; border-radius: 4px !important; }
     }
     @media (max-width: 600px) {
       .services-grid, .why-grid { grid-template-columns: 1fr; }
@@ -952,14 +895,14 @@
         <div class="laptop">
           <div class="laptop-lid">
             <div class="laptop-bar"><span class="ldot r"></span><span class="ldot y"></span><span class="ldot g"></span><div class="laptop-urlbar"></div></div>
-            <div class="laptop-screen"><div class="ls-inner" data-src="https://quiet-youtiao-48b31c.netlify.app"><div class="sp sp-1"><div class="sp-nav"><div class="sp-logo">Аня</div><div class="sp-links"><div class="sp-link"></div><div class="sp-link"></div><div class="sp-link"></div></div></div><div class="sp-hero"><div class="sp-tag">Кондитер · Ярославль</div><div class="sp-h1">Торты и десерты<br>для особых событий</div><div class="sp-sub">Авторская выпечка на заказ — от 3 дней</div><div class="sp-cta">Оставить заявку</div></div><div class="sp-section"><div class="sp-stitle">Мои работы</div><div class="sp-grid3"><div class="sp-card3"></div><div class="sp-card3"></div><div class="sp-card3"></div></div></div><div class="sp-section"><div class="sp-stitle">Обо мне</div><div class="sp-grid"><div class="sp-card"></div><div class="sp-card"></div></div></div></div></div></div>
+            <div class="laptop-screen"><div class="ls-inner" data-src="https://quiet-youtiao-48b31c.netlify.app"><img src="sc1.png" alt="Кондитер Аня" loading="lazy" decoding="async"></div></div>
           </div>
           <div class="laptop-base"><div class="laptop-tp"></div></div>
         </div>
         <div class="phone">
           <div class="phone-frame">
             <div class="phone-notch"><div class="pn-pill"></div></div>
-            <div class="phone-screen"><div class="ps-inner" data-src="https://quiet-youtiao-48b31c.netlify.app"><div class="sp sp-1"><div class="sp-nav"><div class="sp-logo">Аня</div></div><div class="sp-hero"><div class="sp-tag">Кондитер</div><div class="sp-h1">Торты на заказ</div><div class="sp-sub">Ярославль · от 3 дней</div><div class="sp-cta">Заявка</div></div><div class="sp-section"><div class="sp-stitle">Работы</div><div class="sp-grid"><div class="sp-card"></div><div class="sp-card"></div></div></div><div class="sp-section"><div class="sp-stitle">Обо мне</div><div class="sp-grid"><div class="sp-card"></div><div class="sp-card"></div></div></div></div></div></div>
+            <div class="phone-screen"><div class="ps-inner" data-src="https://quiet-youtiao-48b31c.netlify.app"><img src="sc1.png" alt="Кондитер Аня" loading="lazy" decoding="async"></div></div>
             <div class="phone-home"><div class="phone-bar"></div></div>
           </div>
         </div>
@@ -976,14 +919,14 @@
         <div class="laptop">
           <div class="laptop-lid">
             <div class="laptop-bar"><span class="ldot r"></span><span class="ldot y"></span><span class="ldot g"></span><div class="laptop-urlbar"></div></div>
-            <div class="laptop-screen"><div class="ls-inner" data-src="https://relaxed-gnome-af3845.netlify.app"><div class="sp sp-2"><div class="sp-nav"><div class="sp-logo">Богомолов</div><div class="sp-links"><div class="sp-link"></div><div class="sp-link"></div><div class="sp-link"></div></div></div><div class="sp-hero"><div class="sp-tag">Массажист · Ярославль</div><div class="sp-h1">Профессиональный<br>массаж тела</div><div class="sp-sub">Расслабление и восстановление</div><div class="sp-cta">Записаться</div></div><div class="sp-section"><div class="sp-stitle">Услуги</div><div class="sp-grid3"><div class="sp-card3"></div><div class="sp-card3"></div><div class="sp-card3"></div></div></div><div class="sp-section"><div class="sp-stitle">Обо мне</div><div class="sp-grid"><div class="sp-card"></div><div class="sp-card"></div></div></div></div></div></div>
+            <div class="laptop-screen"><div class="ls-inner" data-src="https://relaxed-gnome-af3845.netlify.app"><img src="sc2.png" alt="Богомолов массаж" loading="lazy" decoding="async"></div></div>
           </div>
           <div class="laptop-base"><div class="laptop-tp"></div></div>
         </div>
         <div class="phone">
           <div class="phone-frame">
             <div class="phone-notch"><div class="pn-pill"></div></div>
-            <div class="phone-screen"><div class="ps-inner" data-src="https://relaxed-gnome-af3845.netlify.app"><div class="sp sp-2"><div class="sp-nav"><div class="sp-logo">Богомолов</div></div><div class="sp-hero"><div class="sp-tag">Массажист</div><div class="sp-h1">Профессиональный массаж</div><div class="sp-sub">Ярославль</div><div class="sp-cta">Записаться</div></div><div class="sp-section"><div class="sp-stitle">Услуги</div><div class="sp-grid"><div class="sp-card"></div><div class="sp-card"></div></div></div><div class="sp-section"><div class="sp-stitle">Обо мне</div><div class="sp-grid"><div class="sp-card"></div><div class="sp-card"></div></div></div></div></div></div>
+            <div class="phone-screen"><div class="ps-inner" data-src="https://relaxed-gnome-af3845.netlify.app"><img src="sc2.png" alt="Богомолов массаж" loading="lazy" decoding="async"></div></div>
             <div class="phone-home"><div class="phone-bar"></div></div>
           </div>
         </div>
@@ -1000,14 +943,14 @@
         <div class="laptop">
           <div class="laptop-lid">
             <div class="laptop-bar"><span class="ldot r"></span><span class="ldot y"></span><span class="ldot g"></span><div class="laptop-urlbar"></div></div>
-            <div class="laptop-screen"><div class="ls-inner" data-src="https://inquisitive-bienenstitch-a2ac42.netlify.app"><div class="sp sp-3"><div class="sp-nav"><div class="sp-logo">Илья</div><div class="sp-links"><div class="sp-link"></div><div class="sp-link"></div><div class="sp-link"></div></div></div><div class="sp-hero"><div class="sp-tag">Барбер · Санкт-Петербург</div><div class="sp-h1">Стрижки и уход<br>в Петербурге</div><div class="sp-sub">Индивидуальный подход</div><div class="sp-cta">Записаться</div></div><div class="sp-section"><div class="sp-stitle">Услуги</div><div class="sp-grid3"><div class="sp-card3"></div><div class="sp-card3"></div><div class="sp-card3"></div></div></div><div class="sp-section"><div class="sp-stitle">Обо мне</div><div class="sp-grid"><div class="sp-card"></div><div class="sp-card"></div></div></div></div></div></div>
+            <div class="laptop-screen"><div class="ls-inner" data-src="https://inquisitive-bienenstitch-a2ac42.netlify.app"><img src="sc3.png" alt="Барбер Илья" loading="lazy" decoding="async"></div></div>
           </div>
           <div class="laptop-base"><div class="laptop-tp"></div></div>
         </div>
         <div class="phone">
           <div class="phone-frame">
             <div class="phone-notch"><div class="pn-pill"></div></div>
-            <div class="phone-screen"><div class="ps-inner" data-src="https://inquisitive-bienenstitch-a2ac42.netlify.app"><div class="sp sp-3"><div class="sp-nav"><div class="sp-logo">Илья</div></div><div class="sp-hero"><div class="sp-tag">Барбер · СПб</div><div class="sp-h1">Стрижки в Петербурге</div><div class="sp-sub">Индивидуальный подход</div><div class="sp-cta">Записаться</div></div><div class="sp-section"><div class="sp-stitle">Услуги</div><div class="sp-grid"><div class="sp-card"></div><div class="sp-card"></div></div></div><div class="sp-section"><div class="sp-stitle">Обо мне</div><div class="sp-grid"><div class="sp-card"></div><div class="sp-card"></div></div></div></div></div></div>
+            <div class="phone-screen"><div class="ps-inner" data-src="https://inquisitive-bienenstitch-a2ac42.netlify.app"><img src="sc3.png" alt="Барбер Илья" loading="lazy" decoding="async"></div></div>
             <div class="phone-home"><div class="phone-bar"></div></div>
           </div>
         </div>
