@@ -716,9 +716,18 @@
       .price-cta { flex-direction: column; align-items: flex-start; }
       .contacts-links { flex-direction: column; align-items: stretch; }
       .c-link { justify-content: center; }
-      /* mockup на мобиле: убираем трансформ, img заполняет экран */
-      .ls-inner { width: 100% !important; height: 380px !important; transform: none !important; }
-      .ps-inner { width: 100% !important; height: 340px !important; transform: none !important; animation-delay: 0s !important; }
+      /* mockup на мобиле: убираем трансформ, скроллим через top */
+      .ls-inner { width: 100% !important; height: auto !important; transform: none !important; animation: mob-scroll-ls 14s ease-in-out infinite !important; }
+      .ps-inner { width: 100% !important; height: auto !important; transform: none !important; animation: mob-scroll-ps 12s ease-in-out infinite !important; animation-delay: 1.5s !important; }
+      .ls-inner img, .ps-inner img { width: 100% !important; height: auto !important; object-fit: initial !important; display: block; }
+      @keyframes mob-scroll-ls {
+        0%,  10% { top: 0; }
+        80%, 100% { top: -2000px; }
+      }
+      @keyframes mob-scroll-ps {
+        0%,  10% { top: 0; }
+        80%, 100% { top: -600px; }
+      }
     }
     @media (max-width: 600px) {
       .services-grid, .why-grid { grid-template-columns: 1fr; }
@@ -895,14 +904,14 @@
         <div class="laptop">
           <div class="laptop-lid">
             <div class="laptop-bar"><span class="ldot r"></span><span class="ldot y"></span><span class="ldot g"></span><div class="laptop-urlbar"></div></div>
-            <div class="laptop-screen"><div class="ls-inner" data-src="https://quiet-youtiao-48b31c.netlify.app"><img src="sc1.png" alt="Кондитер Аня" loading="lazy" decoding="async"></div></div>
+            <div class="laptop-screen"><div class="ls-inner" data-src="https://quiet-youtiao-48b31c.netlify.app"><img src="sc1m.png" alt="Кондитер Аня" loading="lazy" decoding="async"></div></div>
           </div>
           <div class="laptop-base"><div class="laptop-tp"></div></div>
         </div>
         <div class="phone">
           <div class="phone-frame">
             <div class="phone-notch"><div class="pn-pill"></div></div>
-            <div class="phone-screen"><div class="ps-inner" data-src="https://quiet-youtiao-48b31c.netlify.app"><img src="sc1.png" alt="Кондитер Аня" loading="lazy" decoding="async"></div></div>
+            <div class="phone-screen"><div class="ps-inner" data-src="https://quiet-youtiao-48b31c.netlify.app"><img src="sc1m.png" alt="Кондитер Аня" loading="lazy" decoding="async"></div></div>
             <div class="phone-home"><div class="phone-bar"></div></div>
           </div>
         </div>
@@ -919,14 +928,14 @@
         <div class="laptop">
           <div class="laptop-lid">
             <div class="laptop-bar"><span class="ldot r"></span><span class="ldot y"></span><span class="ldot g"></span><div class="laptop-urlbar"></div></div>
-            <div class="laptop-screen"><div class="ls-inner" data-src="https://relaxed-gnome-af3845.netlify.app"><img src="sc2.png" alt="Богомолов массаж" loading="lazy" decoding="async"></div></div>
+            <div class="laptop-screen"><div class="ls-inner" data-src="https://relaxed-gnome-af3845.netlify.app"><img src="sc2m.png" alt="Богомолов массаж" loading="lazy" decoding="async"></div></div>
           </div>
           <div class="laptop-base"><div class="laptop-tp"></div></div>
         </div>
         <div class="phone">
           <div class="phone-frame">
             <div class="phone-notch"><div class="pn-pill"></div></div>
-            <div class="phone-screen"><div class="ps-inner" data-src="https://relaxed-gnome-af3845.netlify.app"><img src="sc2.png" alt="Богомолов массаж" loading="lazy" decoding="async"></div></div>
+            <div class="phone-screen"><div class="ps-inner" data-src="https://relaxed-gnome-af3845.netlify.app"><img src="sc2m.png" alt="Богомолов массаж" loading="lazy" decoding="async"></div></div>
             <div class="phone-home"><div class="phone-bar"></div></div>
           </div>
         </div>
@@ -943,14 +952,14 @@
         <div class="laptop">
           <div class="laptop-lid">
             <div class="laptop-bar"><span class="ldot r"></span><span class="ldot y"></span><span class="ldot g"></span><div class="laptop-urlbar"></div></div>
-            <div class="laptop-screen"><div class="ls-inner" data-src="https://inquisitive-bienenstitch-a2ac42.netlify.app"><img src="sc3.png" alt="Барбер Илья" loading="lazy" decoding="async"></div></div>
+            <div class="laptop-screen"><div class="ls-inner" data-src="https://inquisitive-bienenstitch-a2ac42.netlify.app"><img src="sc3m.png" alt="Барбер Илья" loading="lazy" decoding="async"></div></div>
           </div>
           <div class="laptop-base"><div class="laptop-tp"></div></div>
         </div>
         <div class="phone">
           <div class="phone-frame">
             <div class="phone-notch"><div class="pn-pill"></div></div>
-            <div class="phone-screen"><div class="ps-inner" data-src="https://inquisitive-bienenstitch-a2ac42.netlify.app"><img src="sc3.png" alt="Барбер Илья" loading="lazy" decoding="async"></div></div>
+            <div class="phone-screen"><div class="ps-inner" data-src="https://inquisitive-bienenstitch-a2ac42.netlify.app"><img src="sc3m.png" alt="Барбер Илья" loading="lazy" decoding="async"></div></div>
             <div class="phone-home"><div class="phone-bar"></div></div>
           </div>
         </div>
